@@ -1,0 +1,611 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --maincolor: white;
+    --secondary: #d01111;
+    --acsent: #FFA27F;
+    --acsent1: #FFE8C5;
+    --acsent2: rgb(245, 244, 244);
+    --footer: rgb(7, 10, 29);
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    /* height: 100vh; */
+    color: rgb(50, 50, 50);
+}
+
+.container {
+    margin: 30px;
+    display: grid;
+}
+
+/* navbar */
+nav.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: var(--secondary);
+    padding: 5px 20px;
+    align-items: center;
+    color: var(--maincolor);
+    box-shadow: 0 3px 5px black;
+    z-index: 999;
+    order: -1;
+    position: relative;
+}
+
+.menuNav {
+    display: flex;
+    list-style: none;
+}
+
+.menuNav li a {
+    display: block;
+    text-decoration: none;
+    margin-left: 3em;
+    color: var(--maincolor);
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.burger-list{
+    display: none;
+}
+
+/* hero header */
+.container .header {
+    display: grid;
+    grid-template-areas: 'hero hero features1' 'hero hero features2';
+}
+
+.hero {
+    background-image: url(asetimg/sandwhich.jpg);
+    background-size: cover;
+    background-position: center;
+    grid-area: hero;
+    min-height: 400px;
+}
+
+.features1 {
+    background-image: url(asetimg/softdrink1.jpg);
+    background-size: cover;
+    background-position: center;
+    grid-area: features1;
+}
+
+.features2 {
+    background-image: url(asetimg/softdrink2.jpg);
+    background-size: cover;
+    background-position: center;
+    grid-area: features2;
+}
+
+/* promo card */
+.promo {
+    margin-top: 100px;
+}
+
+.promo h2 {
+    text-align: center;
+}
+
+.wrapper-promo {
+    list-style: none;
+    display: grid;
+    width: 100%;
+    /* background: #d89e9e; */
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 12px);
+    gap: 14px;
+    overflow-x: auto;
+    padding: 10px;
+    cursor: pointer;
+   scroll-snap-type: x mandatory;
+   scrollbar-width: 0;
+}
+
+.wrapper-promo::-webkit-scrollbar{
+    display: none;
+}
+
+.wrapper-promo.dragOn{
+    cursor: grab;
+    user-select: none;
+    scroll-snap-type: none;
+}
+
+.card-promo {
+    scroll-snap-align: start;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 10px;
+    transition: .2s ease-in;
+}
+
+.card-promo:hover {
+    box-shadow: 0 3px 5px rgba(31, 30, 30, 0.69);
+}
+
+.wrapText-promo {
+    margin-top: 20px;
+}
+
+.wrapText-promo p {
+    font-size: .8rem;
+    margin-top: 10px;
+}
+
+.img-promo {
+    /* padding: 20px; */
+    width: 100%;
+    height: 150px;
+}
+
+.img-promo img {
+    border-radius: 10px;
+    object-fit: cover;
+    height: 100%;
+}
+
+
+.promoBtn {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.promoBtn a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 25px;
+    background: var(--secondary);
+    font-size: .8em;
+    color: var(--maincolor);
+    font-weight: bold;
+    text-transform: capitalize;
+    border-radius: 6px;
+    box-shadow: 0 0 4px rgba(196, 1, 1, 0.71);
+    transition: .2s ease-in;
+}
+
+.promoBtn a:hover {
+    background: rgb(187, 5, 5);
+}
+
+.promoBtn a:active {
+    background: rgb(153, 3, 3);
+    text-shadow: 0 0 2px white;
+}
+
+
+/* menu section */
+.menu {
+    margin-top: 100px;
+}
+
+.menu h2 {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.menu-list {
+    display: grid;
+    grid-auto-columns: calc((100% / 6) - 12px);
+    gap: 14px;
+    grid-auto-flow: column;
+    list-style: none;
+    overflow-x: hidden;
+    padding: .5rem;
+    cursor: pointer;
+}
+
+
+
+.menu-list.menuDragOn {
+    cursor: grab;
+    user-select: none;
+    /* scroll-snap-type: none; */
+
+}
+
+.menu-img {
+    padding: 10px;
+}
+
+
+.menu-img p {
+    font-size: .6em;
+}
+
+.menuBtn {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.menuBtn a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 25px;
+    background: var(--secondary);
+    font-size: .8em;
+    color: var(--maincolor);
+    font-weight: bold;
+    text-transform: capitalize;
+    border-radius: 6px;
+    box-shadow: 0 0 4px rgba(196, 1, 1, 0.71);
+    transition: .2s ease-in;
+}
+
+.menuBtn a:hover {
+    background: rgb(187, 5, 5);
+}
+
+.menuBtn a:active {
+    background: rgb(153, 3, 3);
+    text-shadow: 0 0 2px white;
+}
+
+/* register section */
+.register {
+    display: grid;
+    grid-template-areas: 'h2 regisMenu';
+    grid-template-columns: 1fr 1fr;
+    background: linear-gradient(145deg, #d01111, rgb(52, 2, 2));
+    margin-top: 100px;
+}
+
+.register-text {
+    grid-area: h2;
+    color: var(--maincolor);
+}
+
+.register-head-wrapper {
+    width: 80%;
+    margin: 50px auto;
+}
+
+.register-header {
+    margin-bottom: 30px;
+}
+
+.register-header h2 {
+    margin-bottom: 5px;
+}
+
+.sosmed-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.sosmed-name a {
+    display: inline-block;
+    color: var(--maincolor);
+    text-decoration: none;
+    background: #000;
+    margin-bottom: 5px;
+    padding: 10px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.sosmed h4,
+.apk-link h4 {
+    margin-bottom: 10px;
+}
+
+.apk-link {
+    margin-top: 20px;
+}
+
+.apk-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.apk-name a {
+    display: inline-block;
+    color: var(--maincolor);
+    text-decoration: none;
+    background: #000;
+    margin-bottom: 5px;
+    padding: 10px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.register-menu {
+    grid-area: regisMenu;
+
+}
+
+.cont-register {
+    background: var(--maincolor);
+    width: 80%;
+    margin: 50px auto;
+    padding: 30px 30px 90px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.inputReg input {
+    height: 40px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid black;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    outline: none;
+    width: 100%;
+}
+
+
+
+.gender {
+    display: flex;
+    flex-direction: column;
+    font-size: .7em;
+    margin-bottom: 15px;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
+
+.gender span {
+    margin-bottom: 10px;
+}
+
+.gender input {
+    margin: 5px 10px;
+}
+
+.cont-register button {
+    width: 50%;
+    align-self: center;
+    border: none;
+    padding: 10px 0;
+    background: var(--secondary);
+    font-size: .7em;
+    color: var(--maincolor);
+    font-weight: bold;
+    text-transform: capitalize;
+    border-radius: 6px;
+    box-shadow: 0 0 4px rgba(196, 1, 1, 0.71);
+    transition: .2s ease-in;
+}
+
+.cont-register button:hover {
+    background: rgb(187, 5, 5);
+}
+
+.cont-register button:active {
+    background: rgb(153, 3, 3);
+    text-shadow: 0 0 2px white;
+}
+
+/* footer */
+.footer {
+    color: var(--maincolor);
+    background: var(--footer);
+    padding: 30px;
+}
+
+.container-footer1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 1fr);
+    grid-auto-flow: column;
+    border-bottom: 1px solid var(--maincolor);
+    padding-bottom: 30px;
+}
+
+.container-footer1 p {
+    font-size: .7em;
+    margin-bottom: 10px;
+}
+
+.container-footer1 h4 {
+    margin-bottom: 20px;
+}
+
+.footer-wrap2{
+    margin-left: 20px;
+}
+
+.footer-wrap2 p {
+    cursor: pointer;
+}
+
+.container-footer2 p {
+    font-size: .7em;
+    margin-top: 30px;
+}
+
+
+/* breakpoint */
+@media (max-width : 900px) {
+    
+
+    .container {
+        margin: 10px;
+    }
+
+    .burger-list{
+        display: block;
+        cursor: pointer;
+    }
+
+    .container .header {
+        grid-template-areas: 'hero hero' 'features1 features1' 'features2 features2';
+        grid-template-rows: 300px 100px 100px;
+    }
+
+    .hero {
+        min-height: 250px;
+    }
+
+    .menuNav{
+        display: none;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--secondary);
+        text-align: center;
+        justify-content: space-around;
+    }
+    
+    .menuNav.blok {
+        transform: translateY(100%);
+        display: flex;
+        border-top: 1px solid var(--maincolor);
+        /* flex-direction: column; */
+    }
+
+    .menuNav li a{
+        margin: 10px 0;
+        font-size: .9em;
+    }
+
+    /* promo */
+    .wrapper-promo {
+        grid-auto-columns: calc((100% / 2) - 9px);
+    }
+
+    .menu-list {
+        grid-auto-columns: calc((100% / 4) - 10px);
+    }
+
+    .register {
+        grid-template-rows:1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'h2' 'regisMenu';
+        padding: 20px;
+    }
+
+    
+    .register-head-wrapper{
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .sosmed-name a,
+    .apk-link a{
+        width: 200px;
+    }
+
+    .sosmed-name ,
+    .apk-name {
+        align-items: center;
+    }
+
+    .register-menu{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cont-register{
+        margin: 20px 0 0 0;
+        width: 70%;
+
+    }
+}
+
+@media (max-width : 500px) {
+
+    .promo,
+    .menu,
+    .register{
+        margin-top: 50px;
+    }
+
+    .promo h2,
+    .menu h2,
+    .register-header h2,
+    .cont-register h2{
+        font-size: 1em;
+    }
+
+    .sosmed h4,
+    .apk-link h4,
+    .footer-wrap2 h4,
+    .footer-wrap1{
+        font-size: .8em;
+    }
+
+    .register-header p,
+    .sosmed-name a,
+    .apk-name a,
+    .menuNav li a{
+        font-size: .7em;
+    }
+    
+    .footer p{
+        font-size: .6em;
+    }
+
+    .cont-register button,
+    .promoBtn a,
+    .menuBtn a{
+        font-size: .7em;
+    }
+
+    .container {
+        margin: 10px;
+    }
+
+    .container .header {
+        grid-template-rows: 200px 100px 100px;
+    }
+
+    .wrapper-promo {
+        grid-auto-columns: calc((100% / 1));
+        gap: 0;
+    }
+
+    /* .card>p{
+        font-size: .6rem;
+        font-weight: 500;
+    } */
+
+
+
+    .menu-list {
+        grid-auto-columns: calc((100% / 2) - 10px);
+    }
+
+
+    .register {
+        grid-template-rows:1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'h2' 'regisMenu';
+        padding: 20px;
+    }
+
+    
+    .register-head-wrapper{
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .sosmed-name ,
+    .apk-name {
+        align-items: center;
+    }
+
+    .cont-register{
+        margin: 20px 0 0 0;
+        width: 100%;
+
+    }
+}
