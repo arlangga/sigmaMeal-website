@@ -203,12 +203,14 @@ nav.navbar {
     gap: 14px;
     grid-auto-flow: column;
     list-style: none;
-    overflow-x: hidden;
+    overflow-x: auto;
     padding: .5rem;
     cursor: pointer;
 }
 
-
+.menu-list::-webkit-scroll{
+    display : none ;
+}
 
 .menu-list.menuDragOn {
     cursor: grab;
