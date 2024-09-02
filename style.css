@@ -208,9 +208,7 @@ nav.navbar {
     cursor: pointer;
 }
 
-.menu-list::-webkit-scroll{
-    display : none ;
-}
+.menu-list::-web-webkit-scrollbar{  display : none ;}
 
 .menu-list.menuDragOn {
     cursor: grab;
